@@ -57,19 +57,18 @@ def main():
           "5= Annoyed,"
           "6= Calm")
 
-    # Global variable
+    # Declare Global variable
     global mood
-
+    
+    # If mood is  1-5, break and ask the next question
     while True:
         try:
-            #
-            mood = float(input("Please enter your mood:"))
+            #Prompt user to enter mood
+            mood = float(input("Please enter the digit for your mood: "))
             if mood == 1 or mood == 2 or mood == 3 or mood == 4 or mood == 5:
                 break
         except:
-            #
-            print("Please enter one of the numbers")
-            continue
+           continue
     moodsInst = Moods()
 
     # If user enters 1 for happy, print affirmation
@@ -113,7 +112,7 @@ def main():
                                 "'Yes', Enter any other digit for 'No"))
         # If user enters 'yes', open text file
         if addedAffirm == 1:
-            filename = "/Users/miry/Downloads/sad.txt"
+            filename = "/Users/miry/Downloads/sadmood.txt"
             file = open(filename, 'a')
             # Ask user how many affirmations they want to add
             numOfAffirm = int(input("How many affirmations"))
@@ -142,7 +141,7 @@ def main():
                                 "'Yes', Enter any other digit for 'No"))
         # If user enters 'yes', open text file
         if addedAffirm == 1:
-            filename = "/Users/miry/Downloads/happy1.txt"
+            filename = "/Users/miry/Downloads/anxiousmood.txt"
             file = open(filename, 'a')
             # Ask user how many affirmations they want to add
             numOfAffirm = int(input("How many affirmations"))
@@ -173,7 +172,7 @@ def main():
                            "'Yes', Enter any other digit for 'No"))
         # If user enters 'yes', open text file
         if addedAffirm == 1:
-            filename = "/Users/miry/Downloads/happy1.txt"
+            filename = "/Users/miry/Downloads/upsetmood.txt"
             file = open(filename, 'a')
             # Ask user how many affirmations they want to add
             numOfAffirm = int(input("How many affirmations"))
@@ -205,7 +204,7 @@ def main():
                            "'Yes', Enter any other digit for 'No"))
         # If user enters 'yes', open text file
         if addedAffirm == 1:
-            filename = "/Users/miry/Downloads/happy1.txt"
+            filename = "/Users/miry/Downloads/annoyedmood.txt"
             file = open(filename, 'a')
             # Ask user how many affirmations they want to add
             numOfAffirm = int(input("How many affirmations"))
