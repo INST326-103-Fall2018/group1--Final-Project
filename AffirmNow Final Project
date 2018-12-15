@@ -61,6 +61,7 @@ def main():
     global mood
     
     # If mood is  1-5, break and ask the next question
+    #If not, continue code
     while True:
         try:
             #Prompt user to enter mood
@@ -69,6 +70,7 @@ def main():
                 break
         except:
            continue
+           
     moodsInst = Moods()
 
     # If user enters 1 for happy, print affirmation
