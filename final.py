@@ -93,24 +93,18 @@ def main():
                 file.write(name + "\n")
                 # Close file and go to "exitForHappy" function
             file.close()
+            #Go to emailSends function
+            emailSends(int)
+            #Go to exitForHappy function
             exitForHappy()
 
             # If user enters 'no', go straight to exitForHappy function
         else:
-            exitForHappy()
-            # Ask user if they want a quote sent to their email
-            emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
-                                  "or Enter any other digit for 'No"))
-            # If user enters '1'...
-            if emailSend == 1:
-                emailAddress = str(input("What is your email address?"))
-                # Go to email function and print message
 
-                email(emailAddress)
-                print("Message sent!")
-                # If user enters any other key, print message
-            else:
-                print("Bye!")
+            #Go to emailSends function
+            emailSends(int)
+            # Go to exitForHappy function
+            exitForHappy()
 
     # If user enters 2 for sad, print affirmation
     elif mood == 2:
@@ -132,20 +126,14 @@ def main():
                 # Close file and go to "exit" function
             file.close()
             exitForSad()
+            emailSends(int)
+
             # Send goodbye message w/ information
         else:
+            #Go to exitForSad function
             exitForSad()
-            # Ask user if they want a quote sent to their email
-            emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
-                                  "or Enter any other digit for 'No"))
-            # If user enters '1'...
-            if emailSend == 1:
-                # Go to email function and print message
-                email(emailAddress)
-                print("Message sent!")
-                # If user enters any other key, print message
-            else:
-                print("Bye!")
+            #Go to emailSends function
+            emailSends(int)
 
     # If user enters 3 for anxious, print affirmation
     elif mood == 3:
@@ -166,21 +154,17 @@ def main():
                 file.write(name + "\n")
                 # Close file and go to "exit" function
             file.close()
+            #Go to exitForAnxious function
             exitForAnxious()
+            #Go to emailSends function
+            emailSends(int)
+
             # Send goodbye message w/ information
         else:
+            # Go to exitForAnxious function
             exitForAnxious()
-            # Ask user if they want a quote sent to their email
-            emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
-                                  "or Enter any other digit for 'No"))
-            # If user enters '1'...
-            if emailSend == 1:
-                # Go to email function and print message
-                email(emailAddress)
-                print("Message sent!")
-                # If user enters any other key, print message
-            else:
-                print("Bye!")
+            # Go to emailSends function
+            emailSends(int)
 
     # If user enters 4 for upset, print affirmation
     elif mood == 4:
@@ -201,21 +185,18 @@ def main():
                 file.write(name + "\n")
                 # Close file and go to "exit" function
             file.close()
+            # Go to exitForUpset function
             exitForUpset()
+            # Go to emailSends function
+            emailSends(int)
+
             # Send goodbye message w/ information
         else:
+            # Go to exitForUpset function
             exitForUpset()
-            # Ask user if they want a quote sent to their email
-            emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
-                                  "or Enter any other digit for 'No"))
-            # If user enters '1'...
-            if emailSend == 1:
-                # Go to email function and print message
-                email(emailAddress)
-                print("Message sent!")
-                # If user enters any other key, print message
-            else:
-                print("Bye!")
+            # Go to emailSends function
+            emailSends(int)
+
 
     # If user enters 5 for annoyed, print affirmation
     elif mood == 5:
@@ -235,49 +216,65 @@ def main():
                 file.write(name + "\n")
                 # Close file and go to "exit" function
             file.close()
+            # Go to exitForUpset function
             exitForAnnoyed()
+            # Go to emailSends function
+            emailSends(int)
+
             # Send goodbye message w/ information
         else:
+            # Go to exitForUpset function
             exitForAnnoyed()
-            # Ask user if they want a quote sent to their email
-            emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
-                                  "or Enter any other digit for 'No"))
-            # If user enters '1'...
-            if emailSend == 1:
-                # Go to email function and print message
-                email(emailAddress)
-                print("Message sent!")
-                # If user enters any other key, print message
-            else:
-                print("Bye!")
+            # Go to emailSends function
+            emailSends(int)
 
 
+#Function for last message for Happy mood
 def exitForHappy():
     #print message
-    print("Thank you for coming to Affirm, see you later" + '\n')
+    print("Thank you for coming to Affirm Now, see you later" + '\n')
 
+#Function for last message for sad mood
 def exitForSad():
     # print message
-    print("Thank you for coming to Affirm, see you later" + '\n')
+    print("Thank you for coming to Affirm Now, see you later" + '\n')
 
+#Function for last message for anxious mood
 def exitForAnxious():
     # print message
-    print("Thank you for coming to Affirm, see you later" + '\n')
+    print("Thank you for coming to Affirm Now, see you later" + '\n')
 
+#Function for last message for upset mood
 def exitForUpset():
     # print message
-    print("Thank you for coming to Affirm, see you later" + '\n')
+    print("Thank you for coming to Affirm Now, see you later" + '\n')
 
+#Function for last message for annoyed mood
 def exitForAnnoyed():
     # print message
-    print("Thank you for coming to Affirm, see you later" + '\n')
+    print("Thank you for coming to Affirm Now, see you later" + '\n')
+
+#Function to send email
+def emailSends(int):
+    emailSend = int(input("Do you want a quote also sent to your email?, Enter 1 for 'Yes'"
+                          "or Enter any other digit for 'No"))
+    # If user enters '1'...
+    if emailSend == 1:
+        emailAddress = str(input("What is your email address?"))
+        # Go to email function and print message
+
+        email(emailAddress)
+        print("Message sent!")
+        # If user enters any other key, print message
+    else:
+        print("Bye!")
 
 def email(emailAddress):
     #initalize variables
     host = "smtp.gmail.com"
     port = 587
-    username = "shopatazizi@gmail.com"
-    password = "Blessing1"
+    username = "affirmNowOrganization@gmail.com"
+    password = "Powerpoint123"
     from_email = username
     to_list = emailAddress
 
